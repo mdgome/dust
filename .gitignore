@@ -198,4 +198,4 @@ Temporary Items
 
 # Docker (MySQL
 mysql-data/
-.docker_env
+docker/.env

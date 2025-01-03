@@ -5,14 +5,14 @@ services:
     image: mysql:latest
     container_name: mysql_container
     env_file:
-      - .docker_env
+      - .env
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} # .env 파일에서 지정된 값 사용
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
-      - mysql-data:/var/lib/mysql # 데이터 지속성을 위해 볼륨 사용
+      - ./mysql-data:/var/lib/mysql # 데이터 지속성을 위해 볼륨 사용
     ports:
       - "3306:${MYSQL_PORT}"  # .env 파일에서 지정된 포트 사용
     restart: always
